@@ -55,22 +55,23 @@ def solver(
 
     return us, dt, T_cold, T_hot
 
-# plate size, mm
-w = h = 10.
-# intervals in x-, y- directions, mm
-dx = dy = 0.1
-# Thermal diffusivity of steel, mm^2/s
-D = 4.
-# Initial cold temperature of square domain
-T_cold = 300
-# Initial hot temperature of circular disc at the center
-T_hot = 700
+if __name__ == "__main__":
+    # plate size, mm
+    w = h = 10.
+    # intervals in x-, y- directions, mm
+    dx = dy = 0.1
+    # Thermal diffusivity of steel, mm^2/s
+    D = 4.
+    # Initial cold temperature of square domain
+    T_cold = 300
+    # Initial hot temperature of circular disc at the center
+    T_hot = 700
 
-# Number of timesteps
-nsteps = 101
-n_output = [0, 10, 50, 100] # Save data and create figures at these timesteps
+    # Number of timesteps
+    nsteps = 101
+    n_output = [0, 10, 50, 100] # Save data and create figures at these timesteps
 
-us, dt, T_cold, T_hot = solver(dx=dx, dy=dy, D=D, nsteps=nsteps, n_output=n_output, T_cold=T_cold, T_hot=T_hot)
+    us, dt, T_cold, T_hot = solver(dx=dx, dy=dy, D=D, nsteps=nsteps, n_output=n_output, T_cold=T_cold, T_hot=T_hot)
 
-# Plot output figures
-output_plots(us, n_output, dt, T_cold, T_hot)
+    # Plot output figures
+    output_plots(us, n_output, dt, T_cold, T_hot)
