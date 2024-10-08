@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "diffusion"
+version = "0.1.0"
+description = "A small description"
+readme = "README.md"
+keywords = ["physics", "plotting", "diffusion"]
+classifiers = [
+    "Programming Language :: Python :: 3"
+]
+dependencies = [
+    "numpy",
+    "matplotlib"
+]
